@@ -1,0 +1,153 @@
+<!-- Guarda este archivo como "demo.html" y ábrelo con doble clic en cualquier navegador. -->
+<!-- Toca / edita cualquier parte y recarga la página para ver los cambios. -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prueba de HTML</title>
+
+  <!-- Aquí van los estilos (CSS). Puedes cambiar colores, tamaños, etc. -->
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      max-width: 700px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      line-height: 1.5;
+      color: #222;
+    }
+    h1 { color: #c8102e; }           /* Un rojo tipo Honda, cámbialo si quieres */
+    section { margin-bottom: 2.5rem; }
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+    th { background: #f2f2f2; }
+    img { max-width: 100%; border-radius: 8px; }
+    button { padding: 8px 16px; cursor: pointer; }
+    .caja { background: #f7f7f7; padding: 1rem; border-radius: 8px; }
+  </style>
+</head>
+
+<body>
+
+  <!-- ============ TEXTO ============ -->
+  <section>
+    <h1>Texto</h1>
+    <p>Esto es un párrafo normal. Puedes poner texto en
+       <strong>negrita</strong>, en <em>cursiva</em> o
+       <mark>resaltado</mark>.</p>
+    <p>Un salto de línea<br>se hace con la etiqueta &lt;br&gt;.</p>
+    <blockquote>Esto es una cita destacada.</blockquote>
+  </section>
+
+  <!-- ============ IMÁGENES ============ -->
+  <section>
+    <h1>Imágenes</h1>
+    <!-- src = de dónde sale la imagen. Puede ser una URL o un archivo local. -->
+    <img src="https://picsum.photos/600/300"
+         alt="Imagen de ejemplo aleatoria">
+    <p><small>La imagen se carga desde internet (picsum.photos). El texto
+       "alt" aparece si la imagen no carga.</small></p>
+  </section>
+
+  <!-- ============ LISTAS ============ -->
+  <section>
+    <h1>Listas</h1>
+    <p>Sin orden (con puntos):</p>
+    <ul>
+      <li>Manzana</li>
+      <li>Naranja</li>
+      <li>Plátano</li>
+    </ul>
+    <p>Ordenada (con números):</p>
+    <ol>
+      <li>Primero</li>
+      <li>Segundo</li>
+      <li>Tercero</li>
+    </ol>
+  </section>
+
+  <!-- ============ TABLAS ============ -->
+  <section>
+    <h1>Tablas</h1>
+    <table>
+      <tr>
+        <th>Modelo</th>
+        <th>Tipo</th>
+        <th>Año</th>
+      </tr>
+      <tr>
+        <td>Civic</td>
+        <td>Híbrido</td>
+        <td>2025</td>
+      </tr>
+      <tr>
+        <td>Jazz</td>
+        <td>Híbrido</td>
+        <td>2024</td>
+      </tr>
+    </table>
+  </section>
+
+  <!-- ============ DESPLEGABLES ============ -->
+  <section>
+    <h1>Desplegables</h1>
+
+    <!-- Tipo 1: menú de opciones (select) -->
+    <p>Menú para elegir una opción:</p>
+    <label for="color">Elige un color:</label>
+    <select id="color">
+      <option>Rojo</option>
+      <option>Azul</option>
+      <option>Verde</option>
+    </select>
+
+    <!-- Tipo 2: contenido que se abre y cierra (details) -->
+    <p style="margin-top:1rem;">Contenido plegable (haz clic en el título):</p>
+    <details>
+      <summary>Ver más información</summary>
+      <p>Este texto estaba oculto y aparece al pulsar. No necesita nada de
+         código extra, solo las etiquetas &lt;details&gt; y &lt;summary&gt;.</p>
+    </details>
+  </section>
+
+  <!-- ============ ENLACES ============ -->
+  <section>
+    <h1>Enlaces</h1>
+    <p>Un enlace a otra página:
+       <a href="https://developer.mozilla.org/es/" target="_blank">
+         documentación de HTML (MDN)</a>.
+       El atributo target="_blank" lo abre en una pestaña nueva.</p>
+  </section>
+
+  <!-- ============ FORMULARIO Y BOTONES ============ -->
+  <section>
+    <h1>Formulario y botones</h1>
+    <div class="caja">
+      <label for="nombre">Tu nombre:</label><br>
+      <input type="text" id="nombre" placeholder="Escribe aquí"><br><br>
+
+      <label for="edad">Edad:</label><br>
+      <input type="number" id="edad" value="18"><br><br>
+
+      <label><input type="checkbox"> Acepto probar cosas</label><br><br>
+
+      <!-- Este botón ejecuta la pequeña función de JavaScript de abajo -->
+      <button onclick="saludar()">Púlsame</button>
+    </div>
+    <p id="salida"></p>
+  </section>
+
+  <!-- ============ UN POCO DE JAVASCRIPT ============ -->
+  <!-- JavaScript es lo que da "vida" a la página. Aquí solo un ejemplo. -->
+  <script>
+    function saludar() {
+      // Coge lo escrito en el campo "nombre"
+      const nombre = document.getElementById("nombre").value || "desconocido";
+      // Lo muestra en el párrafo con id "salida"
+      document.getElementById("salida").textContent = "¡Hola, " + nombre + "!";
+    }
+  </script>
+
+</body>
+</html>
